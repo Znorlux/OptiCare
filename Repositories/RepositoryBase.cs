@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
 using System.Security.Cryptography;
+using MySql.Data.MySqlClient;
 
 //Hora de implementar la DB
 namespace OptiCare.Repositories
@@ -12,16 +12,17 @@ namespace OptiCare.Repositories
     public abstract class RepositoryBase
     {
         private readonly string _connectionString;
-        private object _serverName;
 
         public RepositoryBase()
         {
-            _serverName = "ZNORLUX-DESKTOP\\SQLEXPRESS";
-            _connectionString = $"Server={_serverName}; Database=OptiCare; Integrated Security=true";
-
+            // cadena de conexión para MySQL.
+            _connectionString = "Server=localhost; Database=opticare; User=root";
         }
-        protected SqlConnection GetConnection() { 
-            return new SqlConnection(_connectionString);
+
+        protected MySqlConnection GetConnection()
+        {
+            return new MySqlConnection(_connectionString);
         }
     }
 }
+

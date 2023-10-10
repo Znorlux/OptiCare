@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OptiCare.View"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="800">
-    <Grid>
+        Title="OptiCare - Panel Principal" Height="700" Width="1300"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+    
+    <Border CornerRadius="12"
+            BorderThickness="3"
+            Opacity="0.85">
+
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#F8F6F4" Offset="0"/>
+            </LinearGradientBrush>
+        </Border.BorderBrush>
         
-    </Grid>
+     </Border>
 </Window>
